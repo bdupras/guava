@@ -1,6 +1,8 @@
 Guava: Google Core Libraries for Java
 =====================================
 
+[![Join the chat at https://gitter.im/bdupras/guava](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bdupras/guava?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/google/guava.svg?branch=master)](https://travis-ci.org/google/guava)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava)
 
