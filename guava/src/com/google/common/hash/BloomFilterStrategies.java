@@ -139,7 +139,7 @@ enum BloomFilterStrategies implements BloomFilter.Strategy {
   };
 
   // Note: We use this instead of java.util.BitSet because we need access to the long[] data field
-  static final class BitArray {
+  static class BitArray {
     final long[] data;
     long bitCount;
 
