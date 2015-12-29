@@ -54,7 +54,7 @@ import static java.math.RoundingMode.HALF_DOWN;
  * @author Alex Beal
  */
 @Beta
-public final class CuckooFilter<T> implements Serializable {
+public final class CuckooFilter<T> implements ProbabilisticFilter<T>, Serializable {
   public static double MIN_FPP = 2.0D * 8 / Math.pow(2, Long.SIZE); // 8 is max entries per bucket
   public static double MAX_FPP = 0.99D;
 

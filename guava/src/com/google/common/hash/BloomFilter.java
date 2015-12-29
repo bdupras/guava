@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  * @since 11.0
  */
 @Beta
-public final class BloomFilter<T> implements Predicate<T>, Serializable {
+public final class BloomFilter<T> implements ProbabilisticFilter<T>, Predicate<T>, Serializable {
   /**
    * A strategy to translate T instances, to {@code numHashFunctions} bit indexes.
    *
@@ -135,6 +135,7 @@ public final class BloomFilter<T> implements Predicate<T>, Serializable {
    * Returns {@code true} if the element <i>might</i> have been put in this Bloom filter,
    * {@code false} if this is <i>definitely</i> not the case.
    */
+  @Override
   @CheckReturnValue
   public boolean mightContain(T object) {
     return strategy.mightContain(object, funnel, numHashFunctions, bits);
@@ -163,6 +164,8 @@ public final class BloomFilter<T> implements Predicate<T>, Serializable {
    *     it is called."
    * @since 12.0 (present in 11.0 with {@code void} return type})
    */
+  @Override
+  @CheckReturnValue
   public boolean put(T object) {
     return strategy.put(object, funnel, numHashFunctions, bits);
   }
@@ -178,6 +181,7 @@ public final class BloomFilter<T> implements Predicate<T>, Serializable {
    *
    * @since 14.0 (since 11.0 as expectedFalsePositiveProbability())
    */
+  @Override
   @CheckReturnValue
   public double expectedFpp() {
     // You down with FPP? (Yeah you know me!) Who's down with FPP? (Every last homie!)
